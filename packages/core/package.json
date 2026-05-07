@@ -1,0 +1,12 @@
+{
+  "name": "@aruvili/core",
+  "version": "0.0.1",
+  "private": true,
+  "main": "./index.ts",
+  "types": "./index.ts",
+  "exports": {
+    "./tokens": "./tokens/index.ts",
+    "./utils/css-gen": "./utils/css-gen.ts",
+    "./tailwind-preset": "./themes/tailwind-preset.js"
+  }
+}
