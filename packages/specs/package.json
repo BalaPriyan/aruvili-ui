@@ -10,6 +10,7 @@
     "./card": "./card/index.ts",
     "./avatar": "./avatar/index.ts",
     "./badge": "./badge/index.ts",
-    "./tabs": "./tabs/index.ts"
+    "./tabs": "./tabs/index.ts",
+    "./select": "./select/index.ts"
   }
 }

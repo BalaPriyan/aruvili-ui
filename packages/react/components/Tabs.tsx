@@ -1,42 +1,21 @@
-import React, { createContext, useContext, useState, useMemo, useCallback } from 'react';
+import React from 'react';
 import { clsx, type ClassValue } from 'clsx';
 import { twMerge } from 'tailwind-merge';
 import { TabsProps, TabsListProps, TabsTriggerProps, TabsContentProps } from '@aruvili/specs/tabs';
+import { TabsProvider, useTabsContext } from '../providers/TabsProvider';
 
 function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
 }
 
-type TabsContextValue = {
-  value: string;
-  onValueChange: (value: string) => void;
-};
-
-const TabsContext = createContext<TabsContextValue | undefined>(undefined);
-
 export const Tabs = React.forwardRef<HTMLDivElement, React.HTMLAttributes<HTMLDivElement> & TabsProps>(
-  ({ className, defaultValue, value: controlledValue, onValueChange: setControlledValue, ...props }, ref) => {
-    
-    const [uncontrolledValue, setUncontrolledValue] = useState(defaultValue || '');
-    const isControlled = controlledValue !== undefined;
-    const value = isControlled ? controlledValue : uncontrolledValue;
-    
-    const onValueChange = useCallback((newValue: string) => {
-      if (!isControlled) {
-        setUncontrolledValue(newValue);
-      }
-      setControlledValue?.(newValue);
-    }, [isControlled, setControlledValue]);
-
-    const contextValue = useMemo(
-      () => ({ value, onValueChange }),
-      [value, onValueChange]
-    );
-
+  ({ className, defaultValue, value, onValueChange, children, ...props }, ref) => {
     return (
-      <TabsContext.Provider value={contextValue}>
-        <div ref={ref} className={cn("w-full", className)} {...props} />
-      </TabsContext.Provider>
+      <TabsProvider value={value} defaultValue={defaultValue} onValueChange={onValueChange}>
+        <div ref={ref} className={cn("w-full", className)} {...props}>
+          {children}
+        </div>
+      </TabsProvider>
     );
   }
 );
@@ -58,9 +37,7 @@ TabsList.displayName = "TabsList";
 
 export const TabsTrigger = React.forwardRef<HTMLButtonElement, React.ButtonHTMLAttributes<HTMLButtonElement> & TabsTriggerProps>(
   ({ className, value, disabled, ...props }, ref) => {
-    const context = useContext(TabsContext);
-    if (!context) throw new Error("TabsTrigger must be used within Tabs");
-
+    const context = useTabsContext();
     const isSelected = context.value === value;
 
     return (
@@ -85,8 +62,7 @@ TabsTrigger.displayName = "TabsTrigger";
 
 export const TabsContent = React.forwardRef<HTMLDivElement, React.HTMLAttributes<HTMLDivElement> & TabsContentProps>(
   ({ className, value, ...props }, ref) => {
-    const context = useContext(TabsContext);
-    if (!context) throw new Error("TabsContent must be used within Tabs");
+    const context = useTabsContext();
 
     if (context.value !== value) return null;
 
