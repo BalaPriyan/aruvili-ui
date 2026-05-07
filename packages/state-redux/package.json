@@ -1,5 +1,5 @@
 {
-  "name": "@aruvili/state-redux",
+  "name": "@aruviliui/state-redux",
   "version": "0.0.1",
   "main": "./index.ts",
   "types": "./index.ts",
@@ -10,3 +10,4 @@
     "@reduxjs/toolkit": "^2.0.0"
   }
 }
+

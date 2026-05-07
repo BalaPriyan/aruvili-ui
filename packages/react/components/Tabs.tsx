@@ -1,12 +1,7 @@
 import React from 'react';
-import { clsx, type ClassValue } from 'clsx';
-import { twMerge } from 'tailwind-merge';
-import { TabsProps, TabsListProps, TabsTriggerProps, TabsContentProps } from '@aruvili/specs/tabs';
+import { cn } from '@aruviliui/core/utils';
+import { TabsProps, TabsListProps, TabsTriggerProps, TabsContentProps } from '@aruviliui/core/types/tabs';
 import { TabsProvider, useTabsContext } from '../providers/TabsProvider';
-
-function cn(...inputs: ClassValue[]) {
-  return twMerge(clsx(inputs));
-}
 
 export const Tabs = React.forwardRef<HTMLDivElement, React.HTMLAttributes<HTMLDivElement> & TabsProps>(
   ({ className, defaultValue, value, onValueChange, children, ...props }, ref) => {
@@ -76,3 +71,5 @@ export const TabsContent = React.forwardRef<HTMLDivElement, React.HTMLAttributes
   }
 );
 TabsContent.displayName = "TabsContent";
+
+

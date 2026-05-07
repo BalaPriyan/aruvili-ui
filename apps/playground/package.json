@@ -1,5 +1,5 @@
 {
-  "name": "@aruvili/playground",
+  "name": "@aruviliui/playground",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -13,10 +13,10 @@
     "react-dom": "^18.2.0",
     "react-redux": "^9.1.0",
     "react-router-dom": "^6.22.3",
-    "@aruvili/react": "workspace:*",
-    "@aruvili/core": "workspace:*",
-    "@aruvili/state-redux": "workspace:*",
-    "@aruvili/icons": "workspace:*"
+    "@aruviliui/react": "workspace:*",
+    "@aruviliui/core": "workspace:*",
+    "@aruviliui/state-redux": "workspace:*",
+    "@aruviliui/icons": "workspace:*"
   },
   "devDependencies": {
     "@types/react": "^18.2.66",
@@ -29,3 +29,4 @@
     "vite": "^5.2.0"
   }
 }
+

@@ -1,11 +1,6 @@
 import React, { useState } from 'react';
-import { clsx, type ClassValue } from 'clsx';
-import { twMerge } from 'tailwind-merge';
-import { AvatarProps } from '@aruvili/specs/avatar';
-
-function cn(...inputs: ClassValue[]) {
-  return twMerge(clsx(inputs));
-}
+import { cn } from '@aruviliui/core/utils';
+import { AvatarProps } from '@aruviliui/core/types/avatar';
 
 export const Avatar = React.memo(React.forwardRef<HTMLDivElement, React.HTMLAttributes<HTMLDivElement> & AvatarProps>(
   ({ className, src, fallback, alt, size = 'md', ...props }, ref) => {
@@ -31,7 +26,7 @@ export const Avatar = React.memo(React.forwardRef<HTMLDivElement, React.HTMLAttr
         ref={ref}
         className={cn(
           "relative flex shrink-0 overflow-hidden rounded-full bg-black border border-zinc-200 dark:border-zinc-800",
-          sizeClasses[size],
+          sizeClasses[size as keyof typeof sizeClasses],
           className
         )}
         {...props}
@@ -54,3 +49,5 @@ export const Avatar = React.memo(React.forwardRef<HTMLDivElement, React.HTMLAttr
 ));
 
 Avatar.displayName = "Avatar";
+
+

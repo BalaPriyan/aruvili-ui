@@ -1,0 +1,125 @@
+{
+  "name": "Aruvili UI Registry",
+  "components": [
+    {
+      "name": "avatar",
+      "dependencies": [],
+      "files": [
+        "Avatar.tsx"
+      ],
+      "registry_path": "components/avatar.json"
+    },
+    {
+      "name": "badge",
+      "dependencies": [],
+      "files": [
+        "Badge.tsx"
+      ],
+      "registry_path": "components/badge.json"
+    },
+    {
+      "name": "breadcrumbs",
+      "dependencies": [],
+      "files": [
+        "Breadcrumbs.tsx"
+      ],
+      "registry_path": "components/breadcrumbs.json"
+    },
+    {
+      "name": "button",
+      "dependencies": [],
+      "files": [
+        "Button.tsx"
+      ],
+      "registry_path": "components/button.json"
+    },
+    {
+      "name": "card",
+      "dependencies": [],
+      "files": [
+        "Card.tsx"
+      ],
+      "registry_path": "components/card.json"
+    },
+    {
+      "name": "checkbox",
+      "dependencies": [],
+      "files": [
+        "Checkbox.tsx"
+      ],
+      "registry_path": "components/checkbox.json"
+    },
+    {
+      "name": "filetree",
+      "dependencies": [],
+      "files": [
+        "FileTree.tsx"
+      ],
+      "registry_path": "components/filetree.json"
+    },
+    {
+      "name": "input",
+      "dependencies": [],
+      "files": [
+        "Input.tsx"
+      ],
+      "registry_path": "components/input.json"
+    },
+    {
+      "name": "layout",
+      "dependencies": [],
+      "files": [
+        "Layout.tsx"
+      ],
+      "registry_path": "components/layout.json"
+    },
+    {
+      "name": "pagination",
+      "dependencies": [],
+      "files": [
+        "Pagination.tsx"
+      ],
+      "registry_path": "components/pagination.json"
+    },
+    {
+      "name": "select",
+      "dependencies": [],
+      "files": [
+        "Select.tsx"
+      ],
+      "registry_path": "components/select.json"
+    },
+    {
+      "name": "stepper",
+      "dependencies": [],
+      "files": [
+        "Stepper.tsx"
+      ],
+      "registry_path": "components/stepper.json"
+    },
+    {
+      "name": "switch",
+      "dependencies": [],
+      "files": [
+        "Switch.tsx"
+      ],
+      "registry_path": "components/switch.json"
+    },
+    {
+      "name": "tabs",
+      "dependencies": [],
+      "files": [
+        "Tabs.tsx"
+      ],
+      "registry_path": "components/tabs.json"
+    },
+    {
+      "name": "typography",
+      "dependencies": [],
+      "files": [
+        "Typography.tsx"
+      ],
+      "registry_path": "components/typography.json"
+    }
+  ]
+}

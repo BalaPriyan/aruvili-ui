@@ -1,0 +1,24 @@
+{
+  "name": "aruviliui",
+  "version": "0.1.0",
+  "description": "The unified foundation for Aruvili UI. Includes the design engine and the CLI tool.",
+  "main": "./index.js",
+  "types": "./index.d.ts",
+  "bin": {
+    "aruvili": "./bin/aruvili.js"
+  },
+  "scripts": {
+    "build": "tsup index.ts --format cjs,esm --dts --clean"
+  },
+  "dependencies": {
+    "@aruviliui/core": "workspace:*",
+    "execa": "^8.0.1"
+  },
+  "devDependencies": {
+    "tsup": "^8.0.0",
+    "typescript": "^5.0.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

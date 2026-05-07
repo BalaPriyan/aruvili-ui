@@ -1,13 +1,8 @@
 import React from 'react';
-import { clsx, type ClassValue } from 'clsx';
-import { twMerge } from 'tailwind-merge';
-import { InputProps } from '@aruvili/specs/input';
+import { cn } from '@aruviliui/core/utils';
+import { InputProps } from '@aruviliui/core/types/data-entry';
 
-function cn(...inputs: ClassValue[]) {
-  return twMerge(clsx(inputs));
-}
-
-export const Input = React.memo(React.forwardRef<HTMLInputElement, InputProps & Omit<React.InputHTMLAttributes<HTMLInputElement>, 'size' | 'onChange'>>(
+export const Input = React.memo(React.forwardRef<HTMLInputElement, InputProps>(
   ({ className, type = 'text', size = 'md', error, disabled, iconLeft, iconRight, helperText, onChange, ...props }, ref) => {
     
     const baseStyles = 'flex w-full rounded-md border bg-white dark:bg-zinc-900 text-sm ring-offset-background transition-colors placeholder:text-zinc-400 dark:placeholder:text-zinc-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-zinc-400 dark:focus-visible:ring-zinc-600 disabled:cursor-not-allowed disabled:opacity-50';
@@ -42,7 +37,7 @@ export const Input = React.memo(React.forwardRef<HTMLInputElement, InputProps & 
             className={cn(
               baseStyles,
               stateStyles,
-              sizes[size],
+              sizes[size as keyof typeof sizes],
               iconLeft ? 'pl-9' : '',
               iconRight ? 'pr-9' : '',
               className
@@ -71,3 +66,5 @@ export const Input = React.memo(React.forwardRef<HTMLInputElement, InputProps & 
 ));
 
 Input.displayName = 'Input';
+
+

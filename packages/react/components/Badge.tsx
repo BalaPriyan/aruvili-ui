@@ -1,11 +1,6 @@
 import React from 'react';
-import { clsx, type ClassValue } from 'clsx';
-import { twMerge } from 'tailwind-merge';
-import { BadgeProps } from '@aruvili/specs/badge';
-
-function cn(...inputs: ClassValue[]) {
-  return twMerge(clsx(inputs));
-}
+import { cn } from '@aruviliui/core/utils';
+import { BadgeProps } from '@aruviliui/core/types/badge';
 
 export const Badge = React.memo(React.forwardRef<HTMLDivElement, React.HTMLAttributes<HTMLDivElement> & BadgeProps>(
   ({ className, variant = 'default', ...props }, ref) => {
@@ -22,7 +17,7 @@ export const Badge = React.memo(React.forwardRef<HTMLDivElement, React.HTMLAttri
         ref={ref}
         className={cn(
           "inline-flex items-center rounded-full border border-zinc-200 px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-zinc-950 focus:ring-offset-2 dark:border-zinc-800 dark:focus:ring-zinc-300",
-          variants[variant],
+          variants[variant as keyof typeof variants],
           className
         )}
         {...props}
@@ -32,3 +27,5 @@ export const Badge = React.memo(React.forwardRef<HTMLDivElement, React.HTMLAttri
 ));
 
 Badge.displayName = "Badge";
+
+

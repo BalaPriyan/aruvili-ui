@@ -1,20 +1,16 @@
 import React, { useRef } from 'react';
-import { clsx, type ClassValue } from 'clsx';
-import { twMerge } from 'tailwind-merge';
+import { cn } from '@aruviliui/core/utils';
 import { 
   SelectProps, 
   SelectTriggerProps, 
   SelectValueProps, 
   SelectContentProps, 
   SelectItemProps 
-} from '@aruvili/specs/select';
+} from '@aruviliui/core/types/select';
 import { SelectProvider, useSelectContext } from '../providers/SelectProvider';
 import { useClickOutside } from '../hooks/useClickOutside';
-import { ChevronDownIcon, CheckIcon } from '@aruvili/icons';
+import { ChevronDownIcon, CheckIcon } from '@aruviliui/icons';
 
-function cn(...inputs: ClassValue[]) {
-  return twMerge(clsx(inputs));
-}
 
 export const Select = React.memo(({ value, defaultValue, onValueChange, disabled, children }: SelectProps) => {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -142,3 +138,5 @@ export const SelectItem = React.memo(React.forwardRef<HTMLDivElement, React.HTML
   }
 ));
 SelectItem.displayName = "SelectItem";
+
+

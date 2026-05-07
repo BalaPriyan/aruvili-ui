@@ -1,8 +1,8 @@
 import React from 'react';
-import { Button, Input, Card, CardHeader, CardTitle, CardDescription, CardContent, Avatar, Badge, Tabs, TabsList, TabsTrigger, TabsContent, Select, SelectTrigger, SelectValue, SelectContent, SelectItem } from '@aruvili/react';
+import { Button, Input, Card, CardHeader, CardTitle, CardDescription, CardContent, Avatar, Badge, Tabs, TabsList, TabsTrigger, TabsContent, Select, SelectTrigger, SelectValue, SelectContent, SelectItem } from '@aruviliui/react';
 import { useSelector, useDispatch } from 'react-redux';
-import { setCountry, setCity, RootState } from '@aruvili/state-redux';
-import { FolderIcon, FolderOpenIcon, FileIcon, FileTextIcon, EyeIcon, ImageIcon, DownloadIcon } from '@aruvili/icons';
+import { setCountry, setCity, RootState } from '@aruviliui/state-redux';
+import { FolderIcon, FolderOpenIcon, FileIcon, FileTextIcon, EyeIcon, ImageIcon, DownloadIcon } from '@aruviliui/icons';
 
 export function BillingCard() {
   const dispatch = useDispatch();
@@ -167,3 +167,4 @@ export function PasswordCard() {
     </Card>
   );
 }
+

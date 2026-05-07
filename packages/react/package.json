@@ -1,27 +1,35 @@
 {
-  "name": "@aruvili/react",
-  "version": "0.0.1",
-  "main": "./index.ts",
-  "types": "./index.ts",
+  "name": "@aruviliui/react",
+  "version": "0.1.0",
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
   "scripts": {
-    "build": "tsup index.ts --format cjs,esm --dts",
-    "dev": "tsup index.ts --format cjs,esm --watch --dts",
+    "build": "tsup index.ts --format cjs,esm --dts --clean --minify --external react",
+    "dev": "tsup index.ts --format cjs,esm --watch --dts --external react",
     "lint": "eslint ."
   },
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js"
+    }
+  },
   "peerDependencies": {
-    "react": "^18.0.0",
-    "react-dom": "^18.0.0"
+    "react": ">=18.0.0",
+    "react-dom": ">=18.0.0"
   },
   "devDependencies": {
     "@types/react": "^18.0.0",
+    "@types/react-dom": "^18.0.0",
     "tsup": "^8.0.0",
     "typescript": "^5.0.0"
   },
   "dependencies": {
     "clsx": "^2.1.0",
-    "tailwind-merge": "^2.2.0",
-    "@aruvili/specs": "workspace:*",
-    "@aruvili/core": "workspace:*",
-    "@aruvili/icons": "workspace:*"
+    "tailwind-merge": "^3.0.0",
+    "@aruviliui/core": "workspace:*",
+    "@aruviliui/icons": "workspace:*"
   }
 }

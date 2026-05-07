@@ -1,5 +1,5 @@
 /** @type {import('tailwindcss').Config} */
-import preset from '@aruvili/core/tailwind-preset';
+import preset from '@aruviliui/core/tailwind-preset';
 
 export default {
   presets: [preset],

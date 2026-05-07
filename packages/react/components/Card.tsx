@@ -1,6 +1,5 @@
 import React from 'react';
-import { clsx, type ClassValue } from 'clsx';
-import { twMerge } from 'tailwind-merge';
+import { cn } from '@aruviliui/core/utils';
 import { 
   CardProps, 
   CardHeaderProps, 
@@ -8,11 +7,7 @@ import {
   CardDescriptionProps, 
   CardContentProps, 
   CardFooterProps 
-} from '@aruvili/specs/card';
-
-function cn(...inputs: ClassValue[]) {
-  return twMerge(clsx(inputs));
-}
+} from '@aruviliui/core/types/card';
 
 const Card = React.forwardRef<HTMLDivElement, React.HTMLAttributes<HTMLDivElement> & CardProps>(
   ({ className, ...props }, ref) => (
@@ -77,3 +72,5 @@ const CardFooter = React.forwardRef<HTMLDivElement, React.HTMLAttributes<HTMLDiv
 CardFooter.displayName = "CardFooter";
 
 export { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter };
+
+
