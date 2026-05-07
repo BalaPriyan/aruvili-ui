@@ -21,6 +21,7 @@
     "clsx": "^2.1.0",
     "tailwind-merge": "^2.2.0",
     "@aruvili/specs": "workspace:*",
-    "@aruvili/core": "workspace:*"
+    "@aruvili/core": "workspace:*",
+    "@aruvili/icons": "workspace:*"
   }
 }

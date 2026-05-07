@@ -25,10 +25,29 @@ export const uiSlice = createSlice({
 
 export const { setTheme, toggleSidebar } = uiSlice.actions;
 
+export const billingSlice = createSlice({
+  name: 'billing',
+  initialState: {
+    country: 'us',
+    city: 'sf',
+  },
+  reducers: {
+    setCountry: (state, action: PayloadAction<string>) => {
+      state.country = action.payload;
+    },
+    setCity: (state, action: PayloadAction<string>) => {
+      state.city = action.payload;
+    },
+  },
+});
+
+export const { setCountry, setCity } = billingSlice.actions;
+
 export const createAruviliStore = (preloadedState?: any) => {
   return configureStore({
     reducer: {
       ui: uiSlice.reducer,
+      billing: billingSlice.reducer,
     } as any,
     preloadedState,
   });
