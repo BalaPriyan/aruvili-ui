@@ -1,0 +1,4 @@
+{
+  "name": "index.ts",
+  "content": "import React from 'react';\nexport type TypographyVariant = 'h1' | 'h2' | 'h3' | 'h4' | 'p' | 'small' | 'code' | 'lead';\n\nexport interface TypographyProps extends React.HTMLAttributes<HTMLElement> {\n  /** The typographic variant to render */\n  variant?: TypographyVariant;\n  /** Content of the component */\n  children: React.ReactNode;\n  /** Additional CSS classes */\n  className?: string;\n  /** Custom HTML tag to use */\n  as?: React.ElementType;\n}\n\r\n"
+}

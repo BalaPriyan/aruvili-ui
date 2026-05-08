@@ -10,4 +10,5 @@ export * from './typography';
 export * from './layout';
 export * from './navigation';
 export * from './data-entry';
+export * from './sidebar';
 

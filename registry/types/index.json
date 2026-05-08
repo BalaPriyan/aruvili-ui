@@ -1,0 +1,4 @@
+{
+  "name": "index.ts",
+  "content": "import React from 'react';\nexport * from './button';\nexport * from './card';\nexport * from './avatar';\nexport * from './badge';\nexport * from './tabs';\nexport * from './select';\nexport * from './file-tree';\nexport * from './typography';\nexport * from './layout';\nexport * from './navigation';\nexport * from './data-entry';\nexport * from './sidebar';\n\r\n"
+}

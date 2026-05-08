@@ -1,0 +1,4 @@
+{
+  "name": "index.ts",
+  "content": "import React from 'react';\nexport type FileTreeNodeType = 'file' | 'folder';\n\nexport interface FileTreeNode {\n  /** Unique identifier for the node */\n  id: string;\n  /** Display name of the file or folder */\n  name: string;\n  /** Type of the node */\n  type: FileTreeNodeType;\n  /** Children nodes, applicable only if type is 'folder' */\n  children?: FileTreeNode[];\n  /** Whether the folder is initially open */\n  isOpen?: boolean;\n}\n\nexport interface FileTreeProps {\n  /** Hierarchical data structure of files and folders */\n  data: FileTreeNode[];\n  /** Callback fired when a file or folder is clicked */\n  onNodeClick?: (node: FileTreeNode) => void;\n  /** Additional CSS classes for styling */\n  className?: string;\n}\n\r\n"
+}

@@ -1,0 +1,4 @@
+{
+  "name": "index.ts",
+  "content": "import React from 'react';\nexport interface BadgeProps {\n  className?: string;\n  variant?: 'default' | 'secondary' | 'outline' | 'danger';\n  children?: any;\n}\n\r\n"
+}

@@ -1,0 +1,4 @@
+{
+  "name": "sidebar.ts",
+  "content": "import React from 'react';\n\nexport interface SidebarProps {\n  children?: React.ReactNode;\n  className?: string;\n  /** Whether the sidebar is collapsed */\n  collapsed?: boolean;\n  /** Callback when collapsed state changes */\n  onCollapse?: (collapsed: boolean) => void;\n  /** Width of the sidebar when expanded */\n  width?: string | number;\n  /** Width of the sidebar when collapsed */\n  collapsedWidth?: string | number;\n  /** Theme variant */\n  variant?: 'light' | 'dark' | 'glass';\n}\n\nexport interface SidebarItemProps {\n  icon?: React.ReactNode;\n  label: React.ReactNode;\n  active?: boolean;\n  disabled?: boolean;\n  onClick?: () => void;\n  href?: string;\n  className?: string;\n  /** Tooltip to show when collapsed */\n  tooltip?: string;\n}\n\nexport interface SidebarGroupProps {\n  label?: string;\n  children: React.ReactNode;\n  className?: string;\n}\n"
+}

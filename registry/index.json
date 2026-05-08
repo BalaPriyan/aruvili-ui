@@ -112,6 +112,16 @@
       "registry_path": "components/select.json"
     },
     {
+      "name": "sidebar",
+      "dependencies": [
+        "@aruviliui/core"
+      ],
+      "files": [
+        "Sidebar.tsx"
+      ],
+      "registry_path": "components/sidebar.json"
+    },
+    {
       "name": "stepper",
       "dependencies": [
         "@aruviliui/core"
@@ -152,5 +162,20 @@
       "registry_path": "components/typography.json"
     }
   ],
-  "utils": "utils.json"
+  "utils": "utils.json",
+  "types": [
+    "avatar/index.ts",
+    "badge/index.ts",
+    "button/index.ts",
+    "card/index.ts",
+    "data-entry/index.ts",
+    "file-tree/index.ts",
+    "index.ts",
+    "layout/index.ts",
+    "navigation/index.ts",
+    "select/index.ts",
+    "sidebar.ts",
+    "tabs/index.ts",
+    "typography/index.ts"
+  ]
 }

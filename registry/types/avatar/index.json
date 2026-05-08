@@ -1,0 +1,4 @@
+{
+  "name": "index.ts",
+  "content": "import React from 'react';\nexport interface AvatarProps {\n  className?: string;\n  src?: string;\n  fallback?: string;\n  alt?: string;\n  size?: 'sm' | 'md' | 'lg';\n}\n\r\n"
+}
