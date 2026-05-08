@@ -1,3 +1,4 @@
+'use client';
 import React, { useState } from 'react';
 export type { FileTreeNode, FileTreeProps } from '@aruviliui/core/types/file-tree';
 import { FolderIcon, FolderOpenIcon, FileIcon, ChevronRightIcon } from '@aruviliui/icons';

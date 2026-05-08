@@ -1,3 +1,4 @@
+'use client';
 import React from 'react';
 import { cn } from '@aruviliui/core/utils';
 import { TabsProps, TabsListProps, TabsTriggerProps, TabsContentProps } from '@aruviliui/core/types/tabs';

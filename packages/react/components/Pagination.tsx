@@ -1,3 +1,4 @@
+'use client';
 import React from 'react';
 import { PaginationProps } from '@aruviliui/core/types/navigation';
 import { ChevronLeftIcon, ChevronRightIcon } from '@aruviliui/icons';

@@ -1,3 +1,4 @@
+'use client';
 import React from 'react';
 import { BreadcrumbsProps } from '@aruviliui/core/types/navigation';
 import { ChevronRightIcon } from '@aruviliui/icons';

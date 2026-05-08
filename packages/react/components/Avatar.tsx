@@ -1,3 +1,5 @@
+'use client';
+
 import React, { useState } from 'react';
 import { cn } from '@aruviliui/core/utils';
 import { AvatarProps } from '@aruviliui/core/types/avatar';

@@ -1,10 +1,12 @@
 {
   "name": "typography",
-  "dependencies": [],
+  "dependencies": [
+    "@aruviliui/core"
+  ],
   "files": [
     {
       "name": "Typography.tsx",
-      "content": "import React from 'react';\nimport { cn } from '@aruvili/core/utils';\nimport { TypographyProps } from '@aruvili/specs/typography';\n\nexport const Typography = React.forwardRef<HTMLElement, TypographyProps>(\n  ({ variant, children, className, as, ...props }, ref) => {\n    const variants = {\n      h1: 'scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl text-white',\n      h2: 'scroll-m-20 border-b border-zinc-800 pb-2 text-3xl font-semibold tracking-tight first:mt-0 text-white',\n      h3: 'scroll-m-20 text-2xl font-semibold tracking-tight text-white',\n      h4: 'scroll-m-20 text-xl font-semibold tracking-tight text-white',\n      p: 'leading-7 [&:not(:first-child)]:mt-6 text-zinc-300',\n      lead: 'text-xl text-zinc-400',\n      small: 'text-sm font-medium leading-none text-zinc-400',\n      code: 'relative rounded bg-zinc-800/50 px-[0.3rem] py-[0.2rem] font-mono text-sm font-semibold text-zinc-100 border border-zinc-700/50',\n    };\n\n    const activeVariant = variant || (as ? undefined : 'p');\n    const Component = (as || activeVariant || 'p') as any;\n\n    return (\n      <Component\n        ref={ref}\n        className={cn(activeVariant && variants[activeVariant as keyof typeof variants], className)}\n        {...props}\n      >\n        {children}\n      </Component>\n    );\n  }\n);\n\nTypography.displayName = 'Typography';\n"
+      "content": "import React from 'react';\nimport { cn } from '@aruviliui/core/utils';\nimport { TypographyProps } from '@aruviliui/core/types/typography';\n\nexport const Typography = React.forwardRef<HTMLElement, TypographyProps>(\n  ({ variant, children, className, as, ...props }, ref) => {\n    const variants = {\n      h1: 'scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl text-white',\n      h2: 'scroll-m-20 border-b border-zinc-800 pb-2 text-3xl font-semibold tracking-tight first:mt-0 text-white',\n      h3: 'scroll-m-20 text-2xl font-semibold tracking-tight text-white',\n      h4: 'scroll-m-20 text-xl font-semibold tracking-tight text-white',\n      p: 'leading-7 [&:not(:first-child)]:mt-6 text-zinc-300',\n      lead: 'text-xl text-zinc-400',\n      small: 'text-sm font-medium leading-none text-zinc-400',\n      code: 'relative rounded bg-zinc-800/50 px-[0.3rem] py-[0.2rem] font-mono text-sm font-semibold text-zinc-100 border border-zinc-700/50',\n    };\n\n    const activeVariant = variant || (as ? undefined : 'p');\n    const Component = (as || activeVariant || 'p') as any;\n\n    return (\n      <Component\n        ref={ref}\n        className={cn(activeVariant && variants[activeVariant as keyof typeof variants], className)}\n        {...props}\n      >\n        {children}\n      </Component>\n    );\n  }\n);\n\nTypography.displayName = 'Typography';\n\r\n\r\n"
     }
   ]
 }

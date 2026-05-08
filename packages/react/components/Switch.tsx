@@ -1,3 +1,4 @@
+'use client';
 import React from 'react';
 import { SwitchProps } from '@aruviliui/core/types/data-entry';
 import { cn } from '@aruviliui/core/utils';

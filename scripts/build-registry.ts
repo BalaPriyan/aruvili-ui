@@ -6,6 +6,9 @@ const BASE_DIR = process.cwd();
 const COMPONENTS_DIR = path.join(BASE_DIR, 'packages/react/components');
 const OUTPUT_DIR = path.join(BASE_DIR, 'registry');
 const COMPONENTS_OUTPUT_DIR = path.join(OUTPUT_DIR, 'components');
+const TYPES_OUTPUT_DIR = path.join(OUTPUT_DIR, 'types');
+const UTILS_FILE = path.join(BASE_DIR, 'packages/core/utils/index.ts');
+const TYPES_DIR = path.join(BASE_DIR, 'packages/core/types');
 
 interface ComponentFile {
     name: string;
@@ -28,10 +31,55 @@ interface ComponentIndex {
 // Ensure output directories exist
 if (!fs.existsSync(OUTPUT_DIR)) fs.mkdirSync(OUTPUT_DIR);
 if (!fs.existsSync(COMPONENTS_OUTPUT_DIR)) fs.mkdirSync(COMPONENTS_OUTPUT_DIR);
+if (!fs.existsSync(TYPES_OUTPUT_DIR)) fs.mkdirSync(TYPES_OUTPUT_DIR);
+
+// 1. Build Utilities
+if (fs.existsSync(UTILS_FILE)) {
+    const utilsContent = fs.readFileSync(UTILS_FILE, 'utf8');
+    const utilsData = {
+        name: "utils",
+        content: utilsContent
+    };
+    fs.writeFileSync(
+        path.join(OUTPUT_DIR, 'utils.json'),
+        JSON.stringify(utilsData, null, 2)
+    );
+    console.log("✅ Utils generated.");
+}
+
+// 2. Build Types
+const types: string[] = [];
+if (fs.existsSync(TYPES_DIR)) {
+    const copyTypes = (dir: string, relPath: string = '') => {
+        const items = fs.readdirSync(dir);
+        for (const item of items) {
+            const fullPath = path.join(dir, item);
+            const itemRelPath = path.join(relPath, item);
+            if (fs.statSync(fullPath).isDirectory()) {
+                const outDir = path.join(TYPES_OUTPUT_DIR, itemRelPath);
+                if (!fs.existsSync(outDir)) fs.mkdirSync(outDir, { recursive: true });
+                copyTypes(fullPath, itemRelPath);
+            } else if (item.endsWith('.ts')) {
+                const content = fs.readFileSync(fullPath, 'utf8');
+                const outPath = path.join(TYPES_OUTPUT_DIR, itemRelPath.replace('.ts', '.json'));
+                const outDir = path.dirname(outPath);
+                if (!fs.existsSync(outDir)) fs.mkdirSync(outDir, { recursive: true });
+                
+                fs.writeFileSync(outPath, JSON.stringify({
+                    name: item,
+                    content
+                }, null, 2));
+                types.push(itemRelPath.replace(/\\/g, '/'));
+            }
+        }
+    };
+    copyTypes(TYPES_DIR);
+    console.log(`✅ ${types.length} types generated.`);
+}
 
 const components: ComponentIndex[] = [];
 
-// Get all component files
+// 3. Build Components
 const files = fs.readdirSync(COMPONENTS_DIR).filter(f => f.endsWith('.tsx'));
 
 for (const file of files) {
@@ -71,10 +119,12 @@ for (const file of files) {
     });
 }
 
-// Write index.json
+// 4. Write index.json
 const index = {
     name: "Aruvili UI Registry",
-    components
+    components,
+    utils: "utils.json",
+    types
 };
 
 fs.writeFileSync(

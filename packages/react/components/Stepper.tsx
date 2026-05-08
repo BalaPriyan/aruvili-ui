@@ -1,3 +1,4 @@
+'use client';
 import React from 'react';
 import { StepperProps } from '@aruviliui/core/types/navigation';
 import { CheckIcon } from '@aruviliui/icons';

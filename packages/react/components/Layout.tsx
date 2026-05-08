@@ -1,3 +1,4 @@
+'use client';
 import React from 'react';
 import { cn } from '@aruviliui/core/utils';
 import { BoxProps, GridProps, StackProps, FlexProps, AlignItems, JustifyContent } from '@aruviliui/core/types/layout';

@@ -3,6 +3,7 @@ use console::Style;
 
 mod registry;
 mod commands;
+mod utils;
 
 #[derive(Parser)]
 #[command(name = "aruvili")]

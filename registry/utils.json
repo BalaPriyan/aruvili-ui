@@ -1,0 +1,4 @@
+{
+  "name": "utils",
+  "content": "import { clsx, type ClassValue } from 'clsx';\nimport { twMerge } from 'tailwind-merge';\n\n/**\n * Merges class names using clsx and tailwind-merge.\n * This is the central utility for handling conditional classes in Aruvili UI.\n */\nexport function cn(...inputs: ClassValue[]) {\n  return twMerge(clsx(inputs));\n}\n"
+}

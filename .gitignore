@@ -41,6 +41,12 @@ next-env.d.ts
 .pub/
 build/
 
+#rust
+target/
+Cargo.lock
+
+# Doc
+LOCAL_TESTING.md
 # turbo
 .turbo
 

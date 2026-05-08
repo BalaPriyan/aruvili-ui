@@ -3,7 +3,9 @@
   "components": [
     {
       "name": "avatar",
-      "dependencies": [],
+      "dependencies": [
+        "@aruviliui/core"
+      ],
       "files": [
         "Avatar.tsx"
       ],
@@ -11,7 +13,9 @@
     },
     {
       "name": "badge",
-      "dependencies": [],
+      "dependencies": [
+        "@aruviliui/core"
+      ],
       "files": [
         "Badge.tsx"
       ],
@@ -19,7 +23,9 @@
     },
     {
       "name": "breadcrumbs",
-      "dependencies": [],
+      "dependencies": [
+        "@aruviliui/core"
+      ],
       "files": [
         "Breadcrumbs.tsx"
       ],
@@ -27,7 +33,9 @@
     },
     {
       "name": "button",
-      "dependencies": [],
+      "dependencies": [
+        "@aruviliui/core"
+      ],
       "files": [
         "Button.tsx"
       ],
@@ -35,7 +43,9 @@
     },
     {
       "name": "card",
-      "dependencies": [],
+      "dependencies": [
+        "@aruviliui/core"
+      ],
       "files": [
         "Card.tsx"
       ],
@@ -43,7 +53,9 @@
     },
     {
       "name": "checkbox",
-      "dependencies": [],
+      "dependencies": [
+        "@aruviliui/core"
+      ],
       "files": [
         "Checkbox.tsx"
       ],
@@ -51,7 +63,9 @@
     },
     {
       "name": "filetree",
-      "dependencies": [],
+      "dependencies": [
+        "@aruviliui/core"
+      ],
       "files": [
         "FileTree.tsx"
       ],
@@ -59,7 +73,9 @@
     },
     {
       "name": "input",
-      "dependencies": [],
+      "dependencies": [
+        "@aruviliui/core"
+      ],
       "files": [
         "Input.tsx"
       ],
@@ -67,7 +83,9 @@
     },
     {
       "name": "layout",
-      "dependencies": [],
+      "dependencies": [
+        "@aruviliui/core"
+      ],
       "files": [
         "Layout.tsx"
       ],
@@ -75,7 +93,9 @@
     },
     {
       "name": "pagination",
-      "dependencies": [],
+      "dependencies": [
+        "@aruviliui/core"
+      ],
       "files": [
         "Pagination.tsx"
       ],
@@ -83,7 +103,9 @@
     },
     {
       "name": "select",
-      "dependencies": [],
+      "dependencies": [
+        "@aruviliui/core"
+      ],
       "files": [
         "Select.tsx"
       ],
@@ -91,7 +113,9 @@
     },
     {
       "name": "stepper",
-      "dependencies": [],
+      "dependencies": [
+        "@aruviliui/core"
+      ],
       "files": [
         "Stepper.tsx"
       ],
@@ -99,7 +123,9 @@
     },
     {
       "name": "switch",
-      "dependencies": [],
+      "dependencies": [
+        "@aruviliui/core"
+      ],
       "files": [
         "Switch.tsx"
       ],
@@ -107,7 +133,9 @@
     },
     {
       "name": "tabs",
-      "dependencies": [],
+      "dependencies": [
+        "@aruviliui/core"
+      ],
       "files": [
         "Tabs.tsx"
       ],
@@ -115,11 +143,14 @@
     },
     {
       "name": "typography",
-      "dependencies": [],
+      "dependencies": [
+        "@aruviliui/core"
+      ],
       "files": [
         "Typography.tsx"
       ],
       "registry_path": "components/typography.json"
     }
-  ]
+  ],
+  "utils": "utils.json"
 }

@@ -1,3 +1,4 @@
+'use client';
 import React from 'react';
 import { CheckboxProps } from '@aruviliui/core/types/data-entry';
 import { CheckIcon, MinusIcon } from '@aruviliui/icons';
