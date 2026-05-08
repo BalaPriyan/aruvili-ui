@@ -1,0 +1,4 @@
+{
+  "name": "index.ts",
+  "content": "import React from 'react';\nexport interface TabsProps {\n  className?: string;\n  defaultValue?: string;\n  value?: string;\n  onValueChange?: (value: string) => void;\n  children?: any;\n}\n\nexport interface TabsListProps {\n  className?: string;\n  children?: any;\n}\n\nexport interface TabsTriggerProps {\n  className?: string;\n  value: string;\n  disabled?: boolean;\n  children?: any;\n}\n\nexport interface TabsContentProps {\n  className?: string;\n  value: string;\n  children?: any;\n}\n\r\n"
+}

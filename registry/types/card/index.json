@@ -1,0 +1,4 @@
+{
+  "name": "index.ts",
+  "content": "import React from 'react';\nexport interface CardProps {\n  className?: string;\n  children?: any;\n}\n\nexport interface CardHeaderProps {\n  className?: string;\n  children?: any;\n}\n\nexport interface CardTitleProps {\n  className?: string;\n  children?: any;\n}\n\nexport interface CardDescriptionProps {\n  className?: string;\n  children?: any;\n}\n\nexport interface CardContentProps {\n  className?: string;\n  children?: any;\n}\n\nexport interface CardFooterProps {\n  className?: string;\n  children?: any;\n}\n\r\n"
+}

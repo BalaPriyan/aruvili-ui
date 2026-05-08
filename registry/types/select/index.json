@@ -1,0 +1,4 @@
+{
+  "name": "index.ts",
+  "content": "import React from 'react';\nexport interface SelectProps {\n  value?: string;\n  defaultValue?: string;\n  onValueChange?: (value: string) => void;\n  disabled?: boolean;\n  children?: unknown;\n}\n\nexport interface SelectTriggerProps {\n  className?: string;\n  children?: unknown;\n  id?: string;\n  'aria-label'?: string;\n}\n\nexport interface SelectValueProps {\n  className?: string;\n  placeholder?: string;\n}\n\nexport interface SelectContentProps {\n  className?: string;\n  children?: unknown;\n}\n\nexport interface SelectItemProps {\n  className?: string;\n  value: string;\n  disabled?: boolean;\n  children?: unknown;\n}\n\r\n"
+}
